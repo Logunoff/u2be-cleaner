@@ -1,0 +1,4 @@
+node_modules/
+.DS_Store
+*.zip
+!landing/downloads/laterzero-extension.zip

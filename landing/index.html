@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f3">
+  <meta name="description" content="Give your YouTube Watch later a fresh start. LaterZero removes videos one by one, automatically, with a live counter, timer, and a Stop button.">
+  <title>LaterZero — A fresh start for Watch later.</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23e75b38'/%3E%3Cpath d='M12 12v16h16M19 12h9v9M28 12 17 23' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z"/></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="trash" viewBox="0 0 24 24"><path d="M4 6h16M9 6V3h6v3M6 6l1 15h10l1-15M10 10v7m4-7v7"/></symbol>
+    <symbol id="chrome" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 8h8M8.5 14 4 6m10 9-4 6"/></symbol>
+    <symbol id="logo" viewBox="0 0 32 32"><path d="M8 8v16h16M16 8h8v8M24 8 13 19"/></symbol>
+    <symbol id="puzzle" viewBox="0 0 24 24"><path d="M9 4h3a3 3 0 1 1 6 0h3v6a3 3 0 1 0 0 6v5h-6a3 3 0 1 0-6 0H4v-6a3 3 0 1 0 0-6V4Z"/></symbol>
+  </svg>
+
+  <header class="header wrap">
+    <a href="#" class="brand" aria-label="LaterZero home"><span class="brand-icon"><svg><use href="#logo"/></svg></span>Later<span class="brand-zero">Zero</span><span class="brand-dot">.</span></a>
+    <nav aria-label="Main navigation"><a href="#how-it-works">How it works</a><a href="#in-control">Why LaterZero</a><a href="#faq">FAQ</a></nav>
+    <button class="button nav-cta" data-install>Get the extension <svg><use href="#arrow"/></svg></button>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="tiny-dot"></span> LESS CLUTTER. MORE HEADSPACE.</div>
+        <h1>Watch later.<br><span>Start fresh.</span></h1>
+        <p class="hero-description">For all the videos you were definitely going to watch. Clear your YouTube Watch later list, without a thousand clicks.</p>
+        <div class="hero-actions"><button class="button primary" data-install><svg><use href="#chrome"/></svg> Get the Chrome extension <svg><use href="#arrow"/></svg></button><a href="#demo" class="demo-link" id="hero-demo"><span class="play-circle"><svg><use href="#play"/></svg></span> See it in action</a></div>
+        <div class="hero-note"><span><svg><use href="#check"/></svg> One click to start</span><span><svg><use href="#check"/></svg> Stop anytime</span><span>Made for Chrome</span></div>
+      </div>
+
+      <div class="hero-visual" id="demo">
+        <div class="demo-topline"><span><span class="tiny-dot"></span> A LITTLE PREVIEW OF A FRESH START</span><span>LIVE DEMO <span class="live-dot"></span></span></div>
+        <div class="browser-window">
+          <div class="browser-bar"><div class="traffic-lights"><i></i><i></i><i></i></div><div class="address"><span>⌕</span> youtube.com/playlist?list=WL <span>☆</span></div><svg><use href="#puzzle"/></svg><span class="browser-avatar">J</span></div>
+          <div class="youtube-bar"><div class="youtube-brand"><span class="hamburger">☰</span><span class="youtube-logo"><svg><use href="#play"/></svg></span>YouTube<span class="country">US</span></div><div class="search-decoration">Search <span>⌕</span></div><span class="yt-avatar">J</span></div>
+          <div class="youtube-body">
+            <aside class="yt-sidebar" aria-hidden="true"><span>⌂</span><span>♧</span><div></div><span>▤</span><span class="active-side"><svg><use href="#clock"/></svg></span><span>♡</span></aside>
+            <div class="playlist-area"><div class="playlist-heading"><div><h2>Watch later</h2><p><span id="remaining">6</span> videos <span class="private-label">▣ Private</span></p></div><span class="playlist-menu">···</span></div><div id="video-list" class="video-list"></div><div class="empty-state" id="empty-state" hidden><span class="empty-check"><svg><use href="#check"/></svg></span><h3>A little less later.</h3><p>A whole lot more space.</p></div></div>
+          </div>
+          <div class="progress-panel"><div class="panel-top"><span class="panel-brand"><span class="mini-logo"><svg><use href="#logo"/></svg></span>LaterZero</span><span class="status"><span class="status-dot" id="status-dot"></span><span id="status">Ready when you are</span></span></div><div class="panel-stats"><div><strong id="deleted">0<span> / 6</span></strong><span>videos removed</span></div><div><strong id="elapsed">00:00</strong><span>time elapsed</span></div></div><div class="progress-track"><div id="progress"></div></div><button class="run-button" id="run-demo"><svg><use href="#play"/></svg> Start clearing</button><p class="demo-caption">Interactive demo · example videos only</p></div>
+        </div>
+        <div class="handwritten">You keep the control. <span>↗</span></div>
+      </div>
+    </section>
+
+    <div class="promise-strip wrap"><span>A small extension.<br><strong>A satisfying clean slate.</strong></span><div><svg><use href="#trash"/></svg><span>No more manual removing</span></div><div><svg><use href="#clock"/></svg><span>See every bit of progress</span></div><div><span class="stop-outline">■</span><span>Always a Stop button</span></div></div>
+
+    <section class="how-section wrap" id="how-it-works"><div class="section-heading"><div><div class="eyebrow">THREE STEPS. ONE FRESH START.</div><h2>Let “later” go.</h2></div><p>Your list grew one video at a time.<br>Now it can shrink the same way. Automatically.</p></div><div class="steps"><article><div class="step-top"><span>01</span><svg><use href="#chrome"/></svg></div><h3>Make yourself at home.</h3><p>Add LaterZero to Chrome and pin it to your browser toolbar. It’s there when you need it.</p></article><article><div class="step-top"><span>02</span><svg><use href="#play"/></svg></div><h3>Open your Watch later.</h3><p>Head to your playlist on YouTube. Click the extension in your toolbar to start clearing.</p></article><article><div class="step-top"><span>03</span><svg><use href="#check"/></svg></div><h3>Enjoy the disappearing act.</h3><p>Videos are removed one by one. Watch the counter climb, or press Stop whenever you’re ready.</p></article></div></section>
+
+    <section class="control-section wrap" id="in-control"><div class="control-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="control-label"><span class="live-dot"></span> YOU’RE IN CONTROL</div><div class="big-stop">■ <span>Stop</span></div><span class="floating-time">00:42 <svg><use href="#clock"/></svg></span><span class="floating-count"><svg><use href="#check"/></svg> 24 removed</span><span class="control-art-caption">A fresh start, at your own pace.</span></div><div class="control-copy"><div class="eyebrow">AUTOMATED. NEVER OUT OF YOUR HANDS.</div><h2>Less clicking.<br>Still your call.</h2><p>LaterZero handles the repetitive part. A small panel in the top-right corner keeps you in the loop, from the first video to the last.</p><ul><li><svg><use href="#check"/></svg> A live count of videos removed</li><li><svg><use href="#check"/></svg> An elapsed timer, so you know how it’s going</li><li><svg><use href="#check"/></svg> A Stop button that’s always within reach</li></ul><a class="text-link" href="#demo" id="second-demo">Give the demo a go <svg><use href="#arrow"/></svg></a></div></section>
+
+    <section class="faq-section wrap" id="faq"><div><div class="eyebrow">GOOD QUESTIONS.</div><h2>A few things <br>before you clear.</h2><p>A little clarity for your clean slate.</p></div><div class="questions"><details open><summary>What exactly does LaterZero do?<span>+</span></summary><p>It automates removing videos from your YouTube Watch later playlist, one at a time. Start it from your Chrome toolbar, then follow the live counter and timer in the corner of the page.</p></details><details><summary>Can I stop it halfway through?<span>+</span></summary><p>Yes. Press Stop in the progress panel to stop removing more videos. Videos already removed stay removed. Try the button in the demo above to see how it works.</p></details><details><summary>Does it delete videos from YouTube?<span>+</span></summary><p>It removes videos from your Watch later playlist. The original videos remain on YouTube, and you can add them to Watch later again yourself.</p></details><details><summary>Can I undo a cleanup?<span>+</span></summary><p>There is no automatic undo. Make sure you’re ready to clear your list before you start. You can stop the process at any time, but that won’t restore videos already removed.</p></details><details><summary>Does it work on mobile?<span>+</span></summary><p>LaterZero is being built for Google Chrome on desktop. It doesn’t run inside the YouTube mobile app.</p></details></div></section>
+
+    <section class="closing wrap"><div class="closing-mark"><svg><use href="#logo"/></svg></div><div class="eyebrow">FOR A LIST THAT FEELS LIKE YOU AGAIN.</div><h2>Your next watch<br>deserves a fresh start.</h2><p>Keep the curiosity. Lose the backlog.</p><button class="button primary" data-install><svg><use href="#chrome"/></svg> Get the Chrome extension <svg><use href="#arrow"/></svg></button><span class="closing-note">Less clicking. More breathing room.</span></section>
+  </main>
+
+  <footer class="wrap footer"><div><a class="brand" href="#"><span class="brand-icon"><svg><use href="#logo"/></svg></span>Later<span class="brand-zero">Zero</span><span class="brand-dot">.</span></a><p>A little less later.</p></div><div class="footer-right"><div><a href="#how-it-works">How it works</a><a href="#faq">FAQ</a><button class="footer-button" data-install>Get the extension ↗</button></div><p>© <span id="year">2026</span> LaterZero. Not affiliated with YouTube or Google.</p></div></footer>
+
+  <dialog id="install-dialog" aria-labelledby="install-title"><button class="dialog-close" aria-label="Close dialog">×</button><span class="dialog-logo brand-icon"><svg><use href="#logo"/></svg></span><div class="eyebrow">READY FOR A FRESH START?</div><h2 id="install-title">Your fresh start<br>starts here.</h2><p>Download the extension ZIP and unzip it into a folder you’ll keep. In Chrome, open chrome://extensions, enable Developer mode, then choose Load unpacked and select that folder.</p><p>Pin LaterZero, open your YouTube Watch later playlist, and click the extension to start. This is a local installation; a Chrome Web Store listing isn’t available yet.</p><a class="button primary" href="downloads/laterzero-extension.zip" download>Download extension ZIP ↓</a><button class="button secondary" id="dialog-demo">Try the live demo <svg><use href="#arrow"/></svg></button></dialog>
+</body>
+</html>

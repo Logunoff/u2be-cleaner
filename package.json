@@ -1,0 +1,14 @@
+{
+  "name": "laterzero",
+  "version": "1.0.0",
+  "private": true,
+  "description": "YouTube Watch later cleaner extension and landing page",
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "check": "node --check extension/core.js && node --check extension/content.js && node --check extension/popup.js && node --check landing/app.js",
+    "package": "python3 scripts/package.py"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0"
+  }
+}
